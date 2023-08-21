@@ -14,16 +14,6 @@
   font-weight: 900;
 }
 @font-face {
-  font-family: "circular std";
-  src: url("../../assets/fonts/circularstd/CircularStd-Book.ttf");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "circular std";
-  src: url("../../assets/fonts/circularstd/CircularStd-Medium.ttf");
-  font-weight: 500;
-}
-@font-face {
   font-family: "roboto";
   src: url("../../assets/fonts/roboto/Roboto-Regular.ttf");
 }
