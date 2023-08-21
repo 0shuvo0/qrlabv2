@@ -499,7 +499,7 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 140%;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .blog-post .quote {
   color: var(--body);
