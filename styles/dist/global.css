@@ -175,7 +175,6 @@ body {
 .hero-section .hero-title {
   font-size: 84px;
   font-weight: 900;
-  line-height: 90%;
   letter-spacing: -3.36px;
 }
 .hero-section .hero-subtitle {
@@ -198,6 +197,7 @@ body {
 }
 .hero-section.blog .hero-title {
   max-width: 800px;
+  line-height: 90%;
   text-align: center;
   margin: auto;
 }
