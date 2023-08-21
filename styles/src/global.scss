@@ -440,9 +440,11 @@ body{
             opacity: .7;
             display: flex;
             gap: .75em;
+            &.active{
+                opacity: 1;
+            }
             &.active span{
                 color: var(--headlines);
-                opacity: 1;
                 position: relative;
                 padding-bottom: .5em;
                 &::before, &::after{
