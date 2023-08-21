@@ -4,14 +4,17 @@ const navbarToggleBtn = $('.navbar-btns .toggle-btn')
 const mobileMenu = $('.mobile-menu')
 const mobileMenuCloseBtn = $('.mobile-menu .close-btn')
 
-const masonry = new MiniMasonry({
-    container: '.blogs-container',
-    gutter: 32,
-    ultimateGutter: 32,
-    surroundingGutter: false,
-    baseWidth: 300,
-    wedge: true
-})
+const blogsContainer = $('.blogs-container')
+if(blogsContainer){
+    new MiniMasonry({
+        container: blogsContainer,
+        gutter: 32,
+        ultimateGutter: 32,
+        surroundingGutter: false,
+        baseWidth: 300,
+        wedge: true
+    })
+}
 
 
 navbarToggleBtn.addEventListener('click', () => {
