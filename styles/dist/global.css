@@ -52,6 +52,10 @@
   box-sizing: border-box;
 }
 
+img {
+  object-fit: cover;
+}
+
 body {
   background-image: url("../../assets/hero-bg.png");
   background-repeat: no-repeat;
@@ -62,6 +66,10 @@ body {
   font-weight: 500;
   color: var(--headlines);
   padding-bottom: 3em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
 }
 
 .container {
@@ -337,7 +345,126 @@ body {
   margin-bottom: 96px;
   display: grid;
   grid-template-columns: 300px 1fr;
-  gap: 2em;
+  gap: 4em;
+}
+.blog-post-container .side-col .title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 90%;
+  letter-spacing: -0.48px;
+}
+.blog-post-container .side-col .author-info {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 24px;
+}
+.blog-post-container .side-col .author-info .dp img {
+  --size: 70px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+}
+.blog-post-container .side-col .author-info .info .name {
+  color: var(--headlines);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.blog-post-container .side-col .socials {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5EM;
+}
+.blog-post-container .side-col .social-item {
+  --size: 32px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  background-color: #D9E0E7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-post-container .side-col .input-w-btn {
+  margin-top: 16px;
+  border-radius: 43px;
+  border: 1px solid #DFE1E3;
+  margin: 16px 0;
+}
+.blog-post-container .side-col .info {
+  color: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 145%;
+  letter-spacing: -0.11px;
+  margin-top: 8px;
+}
+.blog-post-container .side-col .summary-item {
+  color: var(--body);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.18px;
+  margin: 11px 0;
+  opacity: 0.7;
+  display: flex;
+  gap: 0.75em;
+}
+.blog-post-container .side-col .summary-item.active span {
+  color: var(--headlines);
+  opacity: 1;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.blog-post-container .side-col .summary-item.active span::before, .blog-post-container .side-col .summary-item.active span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 192px;
+  height: 4px;
+  border-radius: 20px;
+  background-color: #E3E7EA;
+}
+.blog-post-container .side-col .summary-item.active span::after {
+  width: calc(var(--progress, 0) * 2);
+  background-color: var(--primary);
+}
+.blog-post-container .side-col .create-qr-code {
+  border-radius: 24px;
+  box-shadow: inset 0 -43px 43px 0px #f5f6ff;
+  padding: 24px 28px;
+  border: 1px solid #DFE1E3;
+  min-height: 233px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+}
+.blog-post-container .side-col .create-qr-code .title {
+  color: var(--headlines);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.96px;
+  margin-bottom: 1em;
+}
+.blog-post-container .side-col .create-qr-code .round-btn {
+  padding: 0.5em 1.5em;
+  flex-grow: 0;
+  width: fit-content;
+}
+.blog-post-container .side-col .create-qr-code img {
+  height: 108%;
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  right: -8.5%;
+  z-index: -1;
 }
 
 .blog-post .banner {
@@ -383,6 +510,13 @@ body {
   margin: 20px 0;
 }
 
+.divider {
+  height: 1px;
+  background-color: var(--body-alt);
+  margin: 32px 0;
+  opacity: 0.3;
+}
+
 .related-posts-container {
   margin-bottom: 100px;
 }
@@ -390,6 +524,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 1em;
+  flex-wrap: wrap;
 }
 .related-posts-container .nav .round-btn {
   font-size: 13px;
@@ -424,10 +560,33 @@ body {
   .container {
     padding-inline: 160px;
   }
+  .blog-post-container {
+    grid-template-columns: 1fr;
+  }
+  .blog-post-container .side-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+  }
+  .blog-post-container .side-col .divider {
+    display: none;
+  }
 }
 @media (max-width: 992px) {
   .container {
     padding-inline: 120px;
+  }
+  .blog-post-container {
+    grid-template-columns: 1fr;
+  }
+  .blog-post-container .side-col {
+    display: block;
+  }
+  .blog-post-container .side-col .divider {
+    display: block;
+  }
+  .blog-post-container .side-col .create-qr-code {
+    width: 92%;
   }
 }
 @media (max-width: 768px) {
