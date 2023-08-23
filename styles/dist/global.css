@@ -143,6 +143,7 @@ body {
 .round-btn {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   gap: 8px;
   padding: 6px 13px;
   border-radius: 20px;
@@ -265,6 +266,10 @@ body {
   overflow: hidden;
   background: #FFF;
   box-shadow: 0px 60px 60px 0px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease-in-out;
+}
+.blog-card:hover {
+  box-shadow: 0px 65px 65px 0px rgba(0, 0, 0, 0.1);
 }
 .blog-card img {
   width: 100%;
